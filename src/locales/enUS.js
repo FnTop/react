@@ -7,26 +7,17 @@ const translations = {
   theme: 'Theme',
   
   // Tool Names
-  textToSpeech: 'Text to Speech',
-  speechToText: 'Speech to Text',
-  imageToText: 'Image to Text',
-  textToImage: 'Text to Image',
-  textToPdf: 'Text to PDF',
-  pdfToText: 'PDF to Text',
   pinyinQuiz: 'Pinyin Quiz',
+  vigenereCipher: 'Vigenère Cipher',
   
   // Tool Descriptions
-  textToSpeechDesc: 'Convert text to natural speech',
-  speechToTextDesc: 'Convert speech to text',
-  imageToTextDesc: 'Extract text from images',
-  textToImageDesc: 'Convert text to images',
-  textToPdfDesc: 'Convert text to PDF documents',
-  pdfToTextDesc: 'Extract text from PDF files',
   pinyinQuizDesc: 'Test your pinyin knowledge',
+  vigenereCipherDesc: 'Encrypt and decrypt using Vigenère cipher',
   
   // Settings
   light: 'Light',
   dark: 'Dark',
+  warm: 'Warm',
   system: 'System',
   zhCN: '简体中文',
   enUS: 'English',
@@ -41,7 +32,7 @@ const translations = {
   selectCorrectPinyin: 'Select the correct pinyin',
   correct: 'Correct',
   incorrect: 'Incorrect',
-  correctAnswer: 'Correct answer',
+  correctAnswer: 'Correct Answer',
   question: 'Question',
   quizComplete: 'Quiz Complete',
   yourScore: 'Your Score',

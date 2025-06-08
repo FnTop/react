@@ -75,12 +75,14 @@
   transition: all 0.3s ease;
   background-color: var(--card-bg);
   color: var(--text-color);
+  box-sizing: border-box;
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+  transform: none;
 }
 
 .navbar-buttons {
@@ -179,32 +181,39 @@
   }
 
   .nav-item {
-    font-size: 14px;
+    font-size: 16px;
     padding: 6px 12px;
   }
 
   .navbar-right {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
   }
 
   .search-section {
     width: 100%;
+    max-width: 100%;
   }
 
   .search-input {
     padding: 8px 12px;
-    font-size: 12px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .navbar-buttons {
-    width: 100%;
-    justify-content: center;
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
   }
 
   .dropdown-button {
     padding: 6px 12px;
-    font-size: 12px;
+    font-size: 14px;
+    white-space: nowrap;
   }
 } 

@@ -14,6 +14,7 @@ const translations = {
   textToPdf: '文本转PDF',
   pdfToText: 'PDF转文本',
   pinyinQuiz: '拼音测试',
+  vigenereCipher: '维吉尼亚密码',
   
   // 工具描述
   textToSpeechDesc: '将文本转换为自然语音',
@@ -21,20 +22,22 @@ const translations = {
   imageToTextDesc: '从图片中提取文本',
   textToImageDesc: '将文本转换为图片',
   textToPdfDesc: '将文本转换为PDF文档',
-  pdfToTextDesc: '从PDF中提取文本',
-  pinyinQuizDesc: '测试你的拼音水平',
+  pdfToTextDesc: '从PDF文件中提取文本',
+  pinyinQuizDesc: '测试您的拼音知识',
+  vigenereCipherDesc: '使用维吉尼亚密码进行加密和解密',
   
   // 设置
   light: '浅色',
   dark: '深色',
-  system: '跟随系统',
+  warm: '暖色',
+  system: '系统',
   zhCN: '简体中文',
   enUS: 'English',
 
   // 工具详情页
   backToHome: '返回首页',
   startUsing: '开始使用',
-  toolNotFound: '未找到该工具',
+  toolNotFound: '未找到工具',
   search: '搜索工具...',
 
   // 拼音测试
@@ -44,7 +47,7 @@ const translations = {
   correctAnswer: '正确答案',
   question: '问题',
   quizComplete: '测试完成',
-  yourScore: '你的得分',
+  yourScore: '您的得分',
   restartQuiz: '重新开始'
 };
 

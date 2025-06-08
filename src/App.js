@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import ToolDetail from './pages/ToolDetail';
 import PinyinQuiz from './components/Tools/PinyinQuiz';
+import VigenereCipher from './components/Tools/VigenereCipher';
 import './App.css';
 
 // 配置React Router的未来标志
@@ -24,9 +25,10 @@ function App() {
           <div className="app">
             <Navbar />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/react" element={<Home />} />
               <Route path="/tool/:id" element={<ToolDetail />} />
               <Route path="/pinyin-quiz" element={<PinyinQuiz />} />
+              <Route path="/vigenere-cipher" element={<VigenereCipher />} />
             </Routes>
           </div>
         </Router>

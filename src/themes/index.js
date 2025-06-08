@@ -1,13 +1,11 @@
 import { lightTheme } from './lightTheme';
 import { darkTheme } from './darkTheme';
-import { blueTheme } from './blueTheme';
-import { greenTheme } from './greenTheme';
-import { purpleTheme } from './purpleTheme';
+import { warmTheme } from './warmTheme';
 
-export const themes = [
-  lightTheme,
-  darkTheme,
-  blueTheme,
-  greenTheme,
-  purpleTheme
-]; 
+export const themes = {
+  light: lightTheme,
+  dark: darkTheme,
+  warm: warmTheme
+};
+
+export { lightTheme, darkTheme, warmTheme }; 

@@ -73,7 +73,7 @@
 /* 手机布局 - 2列 */
 @media (max-width: 767px) {
   .home {
-    padding-top: 160px;
+    padding-top: 100px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;

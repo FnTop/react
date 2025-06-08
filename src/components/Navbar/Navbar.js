@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { NavLink } from 'react-router-dom';
+import { themes } from '../../themes';
 import './Navbar.css';
 
 const Navbar = ({ onSearch }) => {
@@ -10,11 +11,11 @@ const Navbar = ({ onSearch }) => {
   const [showThemeMenu, setShowThemeMenu] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
 
-  const themes = [
-    { id: 'light', name: t('light'), icon: '☀️' },
-    { id: 'dark', name: t('dark'), icon: '🌙' },
-    { id: 'system', name: t('system'), icon: '⚙️' }
-  ];
+  const themeList = Object.values(themes).map(theme => ({
+    id: theme.id,
+    name: theme.name,
+    icon: theme.icon
+  }));
 
   const languages = [
     { id: 'zhCN', name: t('zhCN') },
@@ -32,7 +33,7 @@ const Navbar = ({ onSearch }) => {
   };
 
   const navItems = [
-    { path: '/', label: t('home') },
+    { path: '/react', label: t('home') },
     { path: '/tools', label: t('tools') },
     { path: '/settings', label: t('settings') }
   ];
@@ -68,11 +69,11 @@ const Navbar = ({ onSearch }) => {
                 className="dropdown-button"
                 onClick={() => setShowThemeMenu(!showThemeMenu)}
               >
-                {themes.find(t => t.id === theme)?.icon} {t('theme')}
+                {themeList.find(t => t.id === theme)?.icon} {t('theme')}
               </button>
               {showThemeMenu && (
                 <div className="dropdown-menu">
-                  {themes.map(t => (
+                  {themeList.map(t => (
                     <button
                       key={t.id}
                       className={`dropdown-item ${theme === t.id ? 'active' : ''}`}

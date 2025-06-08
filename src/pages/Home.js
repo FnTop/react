@@ -6,53 +6,18 @@ import './Home.css';
 
 const toolsData = [
   {
-    id: '1',
-    nameKey: 'textToSpeech',
-    descriptionKey: 'textToSpeechDesc',
-    icon: 'https://placehold.co/60x60/2196f3/ffffff?text=TT',
-    path: '/text-to-speech'
-  },
-  {
-    id: '2',
-    nameKey: 'speechToText',
-    descriptionKey: 'speechToTextDesc',
-    icon: 'https://placehold.co/60x60/4caf50/ffffff?text=ST',
-    path: '/speech-to-text'
-  },
-  {
-    id: '3',
-    nameKey: 'imageToText',
-    descriptionKey: 'imageToTextDesc',
-    icon: 'https://placehold.co/60x60/f44336/ffffff?text=IT',
-    path: '/image-to-text'
-  },
-  {
-    id: '4',
-    nameKey: 'textToImage',
-    descriptionKey: 'textToImageDesc',
-    icon: 'https://placehold.co/60x60/ff9800/ffffff?text=TI',
-    path: '/text-to-image'
-  },
-  {
-    id: '5',
-    nameKey: 'textToPdf',
-    descriptionKey: 'textToPdfDesc',
-    icon: 'https://placehold.co/60x60/9c27b0/ffffff?text=TP',
-    path: '/text-to-pdf'
-  },
-  {
-    id: '6',
-    nameKey: 'pdfToText',
-    descriptionKey: 'pdfToTextDesc',
-    icon: 'https://placehold.co/60x60/607d8b/ffffff?text=PT',
-    path: '/pdf-to-text'
-  },
-  {
-    id: '7',
+    id: 'pinyinQuiz',
     nameKey: 'pinyinQuiz',
     descriptionKey: 'pinyinQuizDesc',
     icon: 'https://placehold.co/60x60/795548/ffffff?text=PQ',
     path: '/pinyin-quiz'
+  },
+  {
+    id: 'vigenereCipher',
+    nameKey: 'vigenereCipher',
+    descriptionKey: 'vigenereCipherDesc',
+    icon: 'https://placehold.co/60x60/1890ff/ffffff?text=VC',
+    path: '/vigenere-cipher'
   }
 ];
 
