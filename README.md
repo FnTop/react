@@ -1,70 +1,210 @@
-# Getting Started with Create React App
+# 工具导航网站
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+一个现代化的工具导航网站，支持多语言、多主题和响应式设计。
 
-## Available Scripts
+## 功能特点
 
-In the project directory, you can run:
+### 🌍 多语言支持
+- 内置中文和英文支持
+- 支持动态添加新语言
+- 语言设置自动保存
+- 支持翻译参数和复数形式
 
-### `npm start`
+### 🎨 主题系统
+- 5种内置主题（浅色、深色、蓝色、绿色、紫色）
+- 支持动态添加新主题
+- 主题设置自动保存
+- 使用CSS变量实现平滑切换
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📱 响应式设计
+- PC端：每行6个工具卡片
+- 大屏幕：每行5个工具卡片
+- iPad：每行4个工具卡片
+- 手机：每行2个工具卡片
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔍 搜索功能
+- 实时搜索
+- 支持工具名称和描述搜索
+- 多语言搜索支持
+- 搜索结果即时显示
 
-### `npm test`
+## 快速开始
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 安装
+```bash
+# 克隆项目
+git clone https://github.com/your-username/tool-nav.git
 
-### `npm run build`
+# 进入项目目录
+cd tool-nav
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 安装依赖
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 启动开发服务器
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 构建
+```bash
+# 构建生产版本
+npm run build
 
-### `npm run eject`
+# 预览生产版本
+npm run preview
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 项目结构
+```
+src/
+├── components/          # 组件目录
+│   ├── Navbar/         # 导航栏组件
+│   └── ToolCard/       # 工具卡片组件
+├── contexts/           # 上下文目录
+│   ├── ThemeContext.js # 主题上下文
+│   └── LanguageContext.js # 语言上下文
+├── locales/            # 语言文件目录
+│   ├── zhCN.js        # 中文翻译
+│   └── enUS.js        # 英文翻译
+├── pages/             # 页面组件
+│   ├── Home.js        # 首页
+│   └── ToolDetail.js  # 工具详情页
+└── App.js             # 应用入口
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 开发指南
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 添加新工具
+1. 在 `src/pages/Home.js` 中添加工具数据：
+```javascript
+{
+  id: 7,
+  nameKey: 'newTool',
+  descriptionKey: 'newToolDesc',
+  icon: '图标URL'
+}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. 添加翻译：
+```javascript
+// zhCN.js
+{
+  newTool: '新工具名称',
+  newToolDesc: '新工具描述'
+}
 
-## Learn More
+// enUS.js
+{
+  newTool: 'New Tool Name',
+  newToolDesc: 'New Tool Description'
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 添加新主题
+1. 在 `ThemeContext.js` 中添加主题：
+```javascript
+{
+  id: 'newTheme',
+  nameKey: 'newTheme',
+  icon: '主题图标'
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. 在 `App.css` 中添加主题样式：
+```css
+[data-theme='newTheme'] {
+  --primary-color: #颜色代码;
+  --secondary-color: #颜色代码;
+}
+```
 
-### Code Splitting
+3. 添加主题名称翻译：
+```javascript
+// zhCN.js
+{
+  newTheme: '新主题名称'
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+// enUS.js
+{
+  newTheme: 'New Theme Name'
+}
+```
 
-### Analyzing the Bundle Size
+### 添加新语言
+1. 创建语言文件 `src/locales/frFR.js`：
+```javascript
+export const frFR = {
+  id: 'fr',
+  name: 'Français',
+  translations: {
+    // 复制现有翻译并修改
+  }
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. 在 `locales/index.js` 中注册：
+```javascript
+import { frFR } from './frFR';
+export const languages = [zhCN, enUS, frFR];
+```
 
-### Making a Progressive Web App
+## 使用示例
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 在组件中使用翻译
+```javascript
+import { useLanguage } from '../contexts/LanguageContext';
 
-### Advanced Configuration
+const MyComponent = () => {
+  const { t } = useLanguage();
+  
+  return (
+    <div>
+      <h1>{t('title')}</h1>
+      <p>{t('description')}</p>
+    </div>
+  );
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 使用主题
+```javascript
+import { useTheme } from '../contexts/ThemeContext';
 
-### Deployment
+const MyComponent = () => {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    <button onClick={() => toggleTheme('dark')}>
+      切换主题
+    </button>
+  );
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 浏览器支持
+- Chrome (最新版)
+- Firefox (最新版)
+- Safari (最新版)
+- Edge (最新版)
 
-### `npm run build` fails to minify
+## 技术栈
+- React 18
+- React Router v6
+- CSS3 (CSS变量)
+- 响应式设计
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 贡献指南
+1. Fork 项目
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 创建 Pull Request
+
+## 许可证
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 联系方式
+- 项目维护者：[Your Name]
+- 邮箱：[your.email@example.com]
+- 项目链接：[https://github.com/your-username/tool-nav]

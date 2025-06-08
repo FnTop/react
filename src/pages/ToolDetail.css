@@ -1,0 +1,142 @@
+.tool-detail {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--primary-color);
+  transform: translateX(-4px);
+}
+
+.back-icon {
+  font-size: 20px;
+}
+
+.tool-content {
+  margin-top: 40px;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tool-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+}
+
+.tool-title {
+  font-size: 32px;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.tool-description {
+  font-size: 18px;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.tool-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.primary-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--primary-color), var(--gradient-end));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error-content {
+  margin-top: 40px;
+}
+
+.error-content h1 {
+  font-size: 64px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.error-content p {
+  font-size: 20px;
+  color: var(--text-color);
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .tool-detail {
+    padding: 16px;
+  }
+
+  .tool-content {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .tool-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .tool-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tool-title {
+    font-size: 24px;
+  }
+
+  .tool-description {
+    font-size: 16px;
+  }
+
+  .primary-button {
+    width: 100%;
+    padding: 10px 20px;
+  }
+} 
