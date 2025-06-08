@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -18,12 +18,18 @@ const router = {
 };
 
 function App() {
+  const [setSearchTerm] = useState('');
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   return (
     <ThemeProvider>
       <LanguageProvider>
         <Router {...router}>
           <div className="app">
-            <Navbar />
+            <Navbar onSearch={handleSearch} />
             <Routes>
               <Route path="/react" element={<Home />} />
               <Route path="/tool/:id" element={<ToolDetail />} />

@@ -25,16 +25,25 @@ const Home = () => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [tools] = useState(toolsData);
+  const [filteredTools, setFilteredTools] = useState(toolsData);
 
   const handleToolClick = (path) => {
     navigate(path);
   };
 
+  const handleSearch = (searchTerm) => {
+    const filtered = tools.filter(tool => 
+      t(tool.nameKey).toLowerCase().includes(searchTerm.toLowerCase()) ||
+      t(tool.descriptionKey).toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredTools(filtered);
+  };
+
   return (
     <div className="home">
-      <Navbar />
+      <Navbar onSearch={handleSearch} />
       <div className="tools-grid">
-        {tools.map(tool => (
+        {filteredTools.map(tool => (
           <div 
             key={tool.id} 
             className="tool-card"
